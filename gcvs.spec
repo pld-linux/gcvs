@@ -33,17 +33,12 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 %patch0 -p1
 
 %build
-CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
-
-cd cvsunix
-%configure2_13
-%{__make}
-cd ..
-
+rm -f missing
 aclocal
 %{__autoconf}
 %{__automake}
-%configure2_13
+CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
+%configure
 %{__make}
 
 %install
@@ -54,7 +49,6 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Development
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install cvsunix/src/cvs $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/gcvs.desktop
 
 gzip -9nf AUTHORS ChangeLog README TODO
