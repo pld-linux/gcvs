@@ -2,7 +2,7 @@
 Name=gCVS
 Comment=Graphical CVS front-end
 Comment[pl]=Graficzna nakładka na CVS
-Icon=
+Icon=gcvs.png
 Exec=gcvs
 Terminal=0
 Type=Application
