@@ -1,5 +1,6 @@
---- gcvs-1.0a7/Makefile.am.orig	Sat May  5 16:20:12 2001
-+++ gcvs-1.0a7/Makefile.am	Sat May  5 16:21:00 2001
+diff -Naur gcvs-1.0a6.orig/Makefile.am gcvs-1.0a6/Makefile.am
+--- gcvs-1.0a6.orig/Makefile.am	Wed Jul  5 07:17:42 2000
++++ gcvs-1.0a6/Makefile.am	Mon Jul 15 11:23:03 2002
 @@ -1,5 +1,5 @@
  EXTRA_DIST = GCVS-VERSION .cvsignore PORTING README.SUN gcvs.spec
 -SUBDIRS = common cvstree rf gcvs Macros cvsunix GuiDoc
@@ -7,3 +8,14 @@
  
  etags:
  	etags -C `find . -name \*.cpp`
+diff -Naur gcvs-1.0a6.orig/configure.in gcvs-1.0a6/configure.in
+--- gcvs-1.0a6.orig/configure.in	Fri Aug 18 06:57:25 2000
++++ gcvs-1.0a6/configure.in	Mon Jul 15 11:25:16 2002
+@@ -156,7 +156,6 @@
+ packagesrcdir=`cd $srcdir && pwd`
+ AC_DEFINE_UNQUOTED(PACKAGE_SOURCE_DIR, "${packagesrcdir}/gcvs")
+ 
+-AC_CONFIG_SUBDIRS(cvsunix)
+ AC_OUTPUT(
+ 	Makefile \
+ 	common/Makefile \
