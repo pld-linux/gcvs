@@ -12,6 +12,7 @@ Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-nocvsunix.patch
 Patch1:		%{name}-ambiguous.patch
+Patch2:		%{name}-types.patch
 URL:		http://www.wincvs.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -33,14 +34,14 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
+CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure
 %{__make}
 
