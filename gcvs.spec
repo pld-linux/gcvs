@@ -1,9 +1,9 @@
 Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client
 Summary(pl):	Sportowany pod gtk WinCVS - klient CVS
 Name:		gcvs
-Version:	1.0a6
-Release:	3
-Epoch:		1
+Version:	1.0
+Release:	1
+Epoch:		2
 License:	GPL
 Group:		Applications/Communications
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/cvsgui/%{name}-%{version}.tar.gz
@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %doc GuiDoc/cvsgui*html
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
