@@ -1,4 +1,4 @@
-Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client.	
+Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client
 Name:		gcvs
 Version:	1.0a4
 Release:	1
