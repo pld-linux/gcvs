@@ -7,4 +7,5 @@ Exec=gcvs
 Terminal=false
 Type=Application
 Encoding=UTF-8
+Categories=GTK;Development;RevisionControl;
 # vi: encoding=utf-8
