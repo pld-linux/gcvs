@@ -34,7 +34,7 @@ graficzny interfejs.
 %patch0 -p1
 
 %build
-CXXFLAGS="%{rpmcflags} -fno-rtti"
+CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
 %configure
 %{__make}
 
