@@ -7,6 +7,7 @@ Epoch:		2
 License:	GPL
 Group:		Applications/Communications
 Source0:	http://dl.sourceforge.net/cvsgui/%{name}-%{version}.tar.bz2
+# Source0-md5:	063b5805eda434f47251af9278168adb
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-nocvsunix.patch
