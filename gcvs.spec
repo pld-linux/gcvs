@@ -21,19 +21,6 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 gCVS is a GTK port of WinCVS, a Windows-based CVS client.
 
-%package howto
-Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client
-Group:		Applications/Communications
-Group(pl):	Aplikacje/Komunikacja
-URL:		http://www.computas.com/pub/wincvs-howto/
-
-%description howto
-This document describes day to day usage of the WinCvs 1.0.x client.
-It is not an introduction to version control systems, not an
-introduction to CVS, and not an introduction to WinCvs. It is more
-like a place you may turn to when you know approximately what you want
-to do, but don't quite remember how to do it.
-
 %prep
 %setup -q
 %patch0 -p1
@@ -57,9 +44,6 @@ make install \
 
 install cvsunix/src/cvs $RPM_BUILD_ROOT/%{_bindir}
 
-install -d $RPM_BUILD_ROOT/%{_docdir}/howto/%{name}-%{version}
-unzip %{SOURCE1} -d $RPM_BUILD_ROOT/%{_docdir}/howto/%{name}-%{version}
-
 gzip -9nf AUTHORS ChangeLog README TODO
 
 %clean
@@ -70,9 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %doc GuiDoc/cvsgui*html
 %attr(755,root,root) %{_bindir}/gcvs
-%attr(755,root,root) %{_bindir}/cvs
-%{_datadir}/%{name}/
-
-%files howto
-%defattr(644,root,root,755)
-%{_docdir}/howto/%{name}-%{version}
+%{_datadir}/%{name}
