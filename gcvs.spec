@@ -8,11 +8,9 @@ Group(pl):	Aplikacje/Komunikacja
 Source0:	http://www.wincvs.org/%{name}-%{version}.tar.gz
 Source1:	http://www.wincvs.org/howto/wincvs-howto.zip
 Patch0:		gcvs-nocvsunix.patch
-URL:		http://www.wincvs.org
-BuildRequires:	automake
-BuildRequires:	gettext-devel
-BuildRequires:	gnome-libs-devel
+URL:		http://www.wincvs.org/
 BuildRequires:	gtk+-devel >= 1.2
+BuildRequires:	libstdc++-devel
 BuildRequires:	unzip
 Requires:	tcl
 Requires:	cvs >= 1.10
@@ -24,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 gCVS is a GTK port of WinCVS, a Windows-based CVS client.
 
 %package howto
-Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client.	
+Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client
 Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
 URL:		http://www.computas.com/pub/wincvs-howto/
@@ -41,9 +39,9 @@ to do, but don't quite remember how to do it.
 %patch0 -p1
 
 %build
-gettextize --copy --force
-automake
-LDFLAGS="-s"; export LDFLAGS
+CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti"
+LDFLAGS="-s"
+export CXXFLAGS LDFLAGS
 %configure
 make
 
@@ -55,8 +53,7 @@ cd ..
 %install
 rm -rf $RPM_BUILD_ROOT
 make install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	sysdir=%{_applnkdir}/Utilities
+	DESTDIR=$RPM_BUILD_ROOT
 
 install cvsunix/src/cvs $RPM_BUILD_ROOT/%{_bindir}
 
