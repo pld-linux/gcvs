@@ -1,0 +1,22 @@
+--- gcvs-1.0/common/getline.c.orig	2002-02-18 03:45:22.000000000 +0000
++++ gcvs-1.0/common/getline.c	2003-12-06 16:49:32.000000000 +0000
+@@ -142,7 +142,7 @@
+   return ret;
+ }
+ 
+-int
++ssize_t
+ getline (char **lineptr, size_t *n, FILE *stream)
+ {
+   return getstr (lineptr, n, stream, '\n', 0);
+--- gcvs-1.0/common/getline.h.orig	2000-02-07 03:19:42.000000000 +0000
++++ gcvs-1.0/common/getline.h	2003-12-06 16:49:20.000000000 +0000
+@@ -33,7 +33,7 @@
+ #define __PROTO(args) ()
+ #endif  /* GCC.  */
+ 
+-int
++ssize_t
+   getline __PROTO ((char **_lineptr, size_t *_n, FILE *_stream));
+ int
+   getstr __PROTO ((char **_lineptr, size_t *_n, FILE *_stream,
