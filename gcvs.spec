@@ -10,12 +10,12 @@ Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/cvsgui/%{name}-%{version}.tar
 Source1:	%{name}.desktop
 Patch0:		%{name}-nocvsunix.patch
 URL:		http://www.wincvs.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	tcl-devel
 BuildRequires:	unzip
-BuildRequires:	autoconf
-BuildRequires:	automake
 Requires:	cvs >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
