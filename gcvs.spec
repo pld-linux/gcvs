@@ -6,7 +6,6 @@ License:	GPL
 Group:		Applications/Communications
 Group(pl):	Aplikacje/Komunikacja
 Source0:	http://www.wincvs.org/%{name}-%{version}.tar.gz
-Source1:	http://www.wincvs.org/howto/wincvs-howto.zip
 Patch0:		gcvs-nocvsunix.patch
 URL:		http://www.wincvs.org/
 BuildRequires:	gtk+-devel >= 1.2
