@@ -47,11 +47,18 @@ LDFLAGS="-s"; export LDFLAGS
 %configure
 make
 
+cd cvsunix
+%configure
+make
+cd ..
+
 %install
 rm -rf $RPM_BUILD_ROOT
 make install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	sysdir=%{_applnkdir}/Utilities
+
+install cvsunix/src/cvs $RPM_BUILD_ROOT/%{_bindir}
 
 install -d $RPM_BUILD_ROOT/%{_docdir}/howto/%{name}-%{version}
 unzip %{SOURCE1} -d $RPM_BUILD_ROOT/%{_docdir}/howto/%{name}-%{version}
@@ -66,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %doc GuiDoc/cvsgui*html
 %attr(755,root,root) %{_bindir}/gcvs
+%attr(755,root,root) %{_bindir}/cvs
 %{_datadir}/%{name}/
 
 %files howto
