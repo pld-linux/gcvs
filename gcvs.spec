@@ -6,7 +6,7 @@ Release:	1
 Epoch:		2
 License:	GPL
 Group:		Applications/Communications
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/cvsgui/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/cvsgui/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-nocvsunix.patch
@@ -19,7 +19,6 @@ BuildRequires:	tcl-devel
 BuildRequires:	unzip
 Requires:	cvs >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 gCVS is a GTK port of WinCVS, a Windows-based CVS client.
