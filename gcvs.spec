@@ -6,8 +6,6 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
-Group(de):	Applikationen/Kommunikation
-Group(pl):	Aplikacje/Komunikacja
 Source0:	ftp://cvsgui.sourceforge.net/pub/cvsgui/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-nocvsunix.patch
