@@ -6,7 +6,7 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Communications
-Source0:	ftp://cvsgui.sourceforge.net/pub/cvsgui/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/cvsgui/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-nocvsunix.patch
 URL:		http://www.wincvs.org/
