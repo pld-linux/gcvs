@@ -7,7 +7,8 @@ License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
 Group(pl):	Aplikacje/Komunikacja
-Source0:	http://www.wincvs.org/%{name}-%{version}.tar.gz
+Source0:	ftp://cvsgui.sourceforge.net/pub/cvsgui/%{name}-%{version}.tar.gz
+Source1:	%{name}.desktop
 Patch0:		%{name}-nocvsunix.patch
 URL:		http://www.wincvs.org/
 BuildRequires:	gtk+-devel >= 1.2
@@ -44,10 +45,14 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Development
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install cvsunix/src/cvs $RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/gcvs.desktop
 
 gzip -9nf AUTHORS ChangeLog README TODO
 
@@ -58,5 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %doc GuiDoc/cvsgui*html
-%attr(755,root,root) %{_bindir}/gcvs
+%attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_applnkdir}/Development/gcvs.desktop

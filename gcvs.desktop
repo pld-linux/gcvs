@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=gCVS
+Name[pl]=gCVS
+Comment=Graphical CVS front-end
+Comment[pl]=Graficzny front-end dla CVS
+Icon=
+Exec=gcvs
+Terminal=0
+Type=Application
+
