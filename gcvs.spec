@@ -34,7 +34,7 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 
 %build
 rm -f missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
