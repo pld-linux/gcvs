@@ -41,7 +41,7 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
+CXXFLAGS="%{rpmcflags} -fno-rtti"
 %configure
 %{__make}
 
