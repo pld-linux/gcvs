@@ -19,3 +19,22 @@ diff -Naur gcvs-1.0a6.orig/configure.in gcvs-1.0a6/configure.in
  AC_OUTPUT(
  	Makefile \
  	common/Makefile \
+--- gcvs-1.0a6/common/AppGlue.cpp~	Mon Jul 15 13:31:59 2002
++++ gcvs-1.0a6/common/AppGlue.cpp	Mon Jul 15 13:31:59 2002
+@@ -879,16 +879,6 @@
+ 		cvscmd << kPathDelimiter;
+ 	cvscmd << "cvs";
+ 	UStr firstCmd = cvscmd;
+-	if(stat(cvscmd, &sb) == -1 || !(S_ISREG(sb.st_mode) || S_ISLNK(sb.st_mode)))
+-	{
+-		cvscmd = PACKAGE_SOURCE_DIR;
+-		CStr uppath, folder;
+-		SplitPath(cvscmd, uppath, folder);
+-		cvscmd = uppath;
+-		if(!cvscmd.endsWith(kPathDelimiter))
+-			cvscmd << kPathDelimiter;
+-		cvscmd << "cvsunix/src/cvs";
+-	}
+ 
+ 	if(stat(cvscmd, &sb) == -1 || !(S_ISREG(sb.st_mode) || S_ISLNK(sb.st_mode)))
+ 	{
