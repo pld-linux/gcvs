@@ -38,7 +38,7 @@ cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install cvsunix/src/cvs $RPM_BUILD_ROOT/%{_bindir}
