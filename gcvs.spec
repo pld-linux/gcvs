@@ -11,6 +11,7 @@ Source0:	http://dl.sourceforge.net/cvsgui/%{name}-%{version}.tar.bz2
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-nocvsunix.patch
+Patch1:		%{name}-ambiguous.patch
 URL:		http://www.wincvs.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -31,11 +32,13 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
 %configure
