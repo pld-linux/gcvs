@@ -3,6 +3,7 @@ Summary(pl):	Sportowany pod gtk WinCVS - klient CVS
 Name:		gcvs
 Version:	1.0a6
 Release:	1
+Epoch:		1
 License:	GPL
 Group:		Applications/Communications
 Group(de):	Applikationen/Kommunikation
