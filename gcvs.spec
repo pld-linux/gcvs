@@ -25,9 +25,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 gCVS is a GTK port of WinCVS, a Windows-based CVS client.
 
 %description -l pl
-gCVS jest bazowanym na Windows klientem CVS, u¿ywaj±cym 
-bibliotek GTK. Pozwala na wygodne operacje w CVS poprzez
-graficzny interfejs.
+gCVS jest bazowanym na Windows klientem CVS, u¿ywaj±cym bibliotek GTK.
+Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 
 %prep
 %setup -q
@@ -59,7 +58,7 @@ gzip -9nf AUTHORS ChangeLog README TODO
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %doc *.gz
 %doc GuiDoc/cvsgui*html
