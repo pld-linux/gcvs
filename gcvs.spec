@@ -34,13 +34,17 @@ Pozwala na wygodne operacje w CVS poprzez graficzny interfejs.
 
 %build
 CXXFLAGS="%{rpmcflags} %{!?debug:-fno-rtti}"
-%configure2_13
-%{__make}
 
 cd cvsunix
 %configure2_13
 %{__make}
 cd ..
+
+aclocal
+%{__autoconf}
+%{__automake}
+%configure2_13
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
