@@ -29,11 +29,11 @@ CXXFLAGS="$RPM_OPT_FLAGS -fno-rtti"
 LDFLAGS="-s"
 export CXXFLAGS LDFLAGS
 %configure
-make
+%{__make}
 
 cd cvsunix
 %configure
-make
+%{__make}
 cd ..
 
 %install
