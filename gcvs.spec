@@ -20,7 +20,6 @@ BuildRequires:	unzip
 Requires:	cvs >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 gCVS is a GTK port of WinCVS, a Windows-based CVS client.
