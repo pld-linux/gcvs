@@ -2,7 +2,7 @@ Summary:	gCVS is a GTK port of WinCVS, a Windows-based CVS client
 Summary(pl):	Sportowany pod gtk WinCVS - klient CVS
 Name:		gcvs
 Version:	1.0
-Release:	3
+Release:	4
 Epoch:		2
 License:	GPL
 Group:		Applications/Communications
@@ -48,12 +48,12 @@ CXXFLAGS="%{rpmcflags} -fno-rtti"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Development,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development/gcvs.desktop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/gcvs.desktop
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
@@ -65,5 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc GuiDoc/cvsgui*html
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_applnkdir}/Development/gcvs.desktop
+%{_desktopdir}/gcvs.desktop
 %{_pixmapsdir}/gcvs.png
