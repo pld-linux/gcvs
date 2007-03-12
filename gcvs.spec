@@ -13,6 +13,7 @@ Source2:	%{name}.png
 Patch0:		%{name}-nocvsunix.patch
 Patch1:		%{name}-ambiguous.patch
 Patch2:		%{name}-types.patch
+Patch3:		%{name}-gcc4.patch
 URL:		http://www.wincvs.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -36,6 +37,7 @@ interfejs.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__aclocal}
