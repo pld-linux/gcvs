@@ -18,3 +18,31 @@
  
  	//! compare
  	inline int compare(const char *thestr) const { return strcmp(*this, thestr); }
+--- gcvs-1.0/common/AppGlue.h.orig	2007-03-12 01:41:38.000000000 +0000
++++ gcvs-1.0/common/AppGlue.h	2007-03-12 01:41:53.000000000 +0000
+@@ -30,8 +30,8 @@
+ class CCvsConsole
+ {
+ public:
+-	virtual long cvs_out(char *txt, long len) = 0L;
+-	virtual long cvs_err(char *txt, long len) = 0L;
++	virtual long cvs_out(char *txt, long len) = 0;
++	virtual long cvs_err(char *txt, long len) = 0;
+ };
+ 
+ #define errInternal -99
+--- gcvs-1.0/common/Persistent.h.orig	2007-03-12 01:39:39.000000000 +0000
++++ gcvs-1.0/common/Persistent.h	2007-03-12 01:40:47.000000000 +0000
+@@ -47,9 +47,9 @@
+ 	CPersistent(const char *uniqueName, kClassPersistent pclass);
+ 	virtual ~CPersistent();
+ 
+-	virtual unsigned int SizeOf(void) const = 0L;
+-	virtual const void *GetData(void) const = 0L;
+-	virtual void SetData(const void *ptr, unsigned int size) = 0L;
++	virtual unsigned int SizeOf(void) const = 0;
++	virtual const void *GetData(void) const = 0;
++	virtual void SetData(const void *ptr, unsigned int size) = 0;
+ 		// virtual access
+ 	
+ 	static void SaveAll(void);
