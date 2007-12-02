@@ -21,7 +21,7 @@ BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libstdc++-devel
 BuildRequires:	tcl-devel
 BuildRequires:	unzip
-Requires:	cvs >= 1.10
+Requires:	cvs-client >= 1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
